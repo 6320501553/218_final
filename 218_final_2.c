@@ -1,32 +1,53 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,k[10000],m[10000],p=0,s=0;
+    int n,i,j,m[10000],p;
     scanf("%d",&n);
     int sum[n],max;
     if(n>1&&n<1001)
     {
-        for(i=1;i<=10000;i++)
+        for(i=1; i<=10000; i++)
         {
-            m[i]=i;
-            k[i]=0;
+            m[i]=0;
         }
-        for(i=1;i<=n;i++)
+        for(i=1; i<=n; i++)
         {
             sum[i]=0;
             scanf("%d",&sum[i]);
         }
-        for(i=1;i<=n;i++)
+        for(i=1; i<=n; i++)
         {
-            for(j=1;j<=10000;j++)
+            for(j=1; j<=n; j++)
             {
-                if(sum[i]==m[j])
+                if(sum[i]==sum[j])
                 {
-                    k[j]=k[j]+1;
+                    m[sum[j]] = m[sum[j]]+1;
+                    sum[j]=0;
                 }
             }
         }
-        max=k[1];
+        max=0;
+        for(j=1; j<=10000; j++)
+        {
+            if(m[j]>max)
+            {
+                p=0;
+                max=m[j];
+                m[j]=0;
+                i=j;
+            }
+            else if(max==m[j])
+            {
+                p=j;
+            }
+        }
+        if(p!=0)
+        {
+            printf("%d %d",i,p);
+        }
+        else
+            printf("%d ",i);
+        /*max=k[1];
         j=1;
         for(i=1;i<=10000;i++)
         {
@@ -48,7 +69,7 @@ int main()
         else if(p==1)
         {
             printf("%d %d",j,s);
-        }
+        }*/
     }
     return 0;
 }
