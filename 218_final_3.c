@@ -5,7 +5,7 @@ int main()
     scanf("%d %d %d",&n,&m,&p);
     if(n<=20&&m<=20&&p<=20)
     {
-        int a[n][n],b[m][m],c[p][p],u[n],t[n],s=0,s1=0,d=1,e=1,f=1,k;
+        int a[n][n],b[m][m],c[p][p],u[n],t[n],u1[m],t1[m],u2[p],t2[p],s=0,s1=0,d=1,e=1,f=1,k,h,g;
         printf("\n\n");
         k=n-1;
         for(i=0; i<n; i++)
@@ -30,6 +30,8 @@ int main()
         }
         for(i=0; i<n; i++)
         {
+            printf("\n");
+            printf("%d %d %d %d\n",u[i],t[i],s,s1);
             if(u[i]==t[i]&&u[i]==s&&u[i]==s1)
             {
                 d=1;
@@ -41,11 +43,13 @@ int main()
             }
         }
         printf("\n");
-        k=m-1;
+        h=m-1;
+        s=0;
+        s1=0;
         for(i=0; i<m; i++)
         {
-            u[i]=0;
-            t[i]=0;
+            u1[i]=0;
+            t1[i]=0;
             for(j=0; j<m; j++)
             {
                 scanf("%d",&b[i][j]);
@@ -55,16 +59,18 @@ int main()
         {
             for(j=0; j<m; j++)
             {
-                u[i]+=b[i][j];
-                t[i]+=b[j][i];
+                u1[i]+=b[i][j];
+                t1[i]+=b[j][i];
             }
             s+=b[i][i];
-            s1+=b[i][k];
-            k--;
+            s1+=b[i][h];
+            h--;
         }
         for(i=0; i<m; i++)
         {
-            if(u[i]==t[i]&&u[i]==s&&u[i]==s1)
+            printf("\n");
+            printf("%d %d %d %d\n",u[i],t[i],s,s1);
+            if(u1[i]==t1[i]&&u1[i]==s&&u1[i]==s1)
             {
                 e=1;
             }
@@ -75,11 +81,13 @@ int main()
             }
         }
         printf("\n");
-        k=p-1;
+        g=p-1;
+        s=0;
+        s1=0;
         for(i=0; i<p; i++)
         {
-            u[i]=0;
-            t[i]=0;
+            u2[i]=0;
+            t2[i]=0;
             for(j=0; j<p; j++)
             {
                 scanf("%d",&c[i][j]);
@@ -87,18 +95,20 @@ int main()
         }
         for(i=0; i<p; i++)
         {
-            for(j=0; j<m; j++)
+            for(j=0; j<p; j++)
             {
-                u[i]+=c[i][j];
-                t[i]+=c[j][i];
+                u2[i]+=c[i][j];
+                t2[i]+=c[j][i];
             }
             s+=c[i][i];
-            s1+=c[i][k];
-            k--;
+            s1+=c[i][g];
+            g--;
         }
         for(i=0; i<p; i++)
         {
-            if(u[i]==t[i]&&u[i]==s&&u[i]==s1)
+            printf("\n");
+            printf("%d %d %d %d\n",u[i],t[i],s,s1);
+            if(u2[i]==t2[i]&&u2[i]==s&&u2[i]==s1)
             {
                 f=1;
             }
@@ -126,21 +136,6 @@ int main()
         }
         else
             printf("yes ");
-        /*for(i=0;i<m;i++)
-        {
-            for(j=0;j<m;j++)
-            {
-                scanf("%d",&b[i][j]);
-            }
-        }
-        printf("\n");
-        for(i=0;i<p;i++)
-        {
-            for(j=0;j<p;j++)
-            {
-                scanf("%d",&c[i][j]);
-            }
-        }*/
     }
 
     return 0;
