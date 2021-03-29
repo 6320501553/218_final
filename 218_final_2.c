@@ -47,29 +47,6 @@ int main()
         }
         else
             printf("%d ",i);
-        /*max=k[1];
-        j=1;
-        for(i=1;i<=10000;i++)
-        {
-            if(k[i]>max)
-            {
-                j=i;
-                p=0;
-            }
-            else if(k[i]==max)
-            {
-                p=1;
-                s=i;
-            }
-        }
-        if(p>1)
-        {
-            printf("%d",j);
-        }
-        else if(p==1)
-        {
-            printf("%d %d",j,s);
-        }*/
     }
     return 0;
 }
