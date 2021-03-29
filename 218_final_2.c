@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,m[10000],p,l=1,s;
+    int n,i,j,m[10000],p,l=0,s;
     scanf("%d",&n);
     int sum[n],max,min[n];
     if(n>1&&n<1001)
@@ -38,24 +38,16 @@ int main()
                 m[j]=0;
                 i=j;
             }
+        }
+        printf("%d ",i);
+        for(j=1; j<=10000; j++)
+        {
             if(max==m[j])
             {
-                min[s]=j;
-                l++;
-                s++;
-                p=1;
+                printf("%d ",j);
             }
         }
-        if(p!=0)
-        {
-            printf("%d ",i);
-            for(s=0;s<(l-1);s++)
-            {
-                printf("%d ",min[s]);
-            }
-        }
-        else
-            printf("%d",i);
+
     }
     return 0;
 }
