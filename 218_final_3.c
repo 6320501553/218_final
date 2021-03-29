@@ -30,8 +30,6 @@ int main()
         }
         for(i=0; i<n; i++)
         {
-            printf("\n");
-            printf("%d %d %d %d\n",u[i],t[i],s,s1);
             if(u[i]==t[i]&&u[i]==s&&u[i]==s1)
             {
                 d=1;
@@ -68,8 +66,6 @@ int main()
         }
         for(i=0; i<m; i++)
         {
-            printf("\n");
-            printf("%d %d %d %d\n",u[i],t[i],s,s1);
             if(u1[i]==t1[i]&&u1[i]==s&&u1[i]==s1)
             {
                 e=1;
@@ -106,8 +102,6 @@ int main()
         }
         for(i=0; i<p; i++)
         {
-            printf("\n");
-            printf("%d %d %d %d\n",u[i],t[i],s,s1);
             if(u2[i]==t2[i]&&u2[i]==s&&u2[i]==s1)
             {
                 f=1;
@@ -120,22 +114,22 @@ int main()
         }
         if(d==1)
         {
-            printf("no ");
+            printf("yes ");
         }
         else
-            printf("yes ");
+            printf("no ");
         if(e==1)
         {
-            printf("no ");
+            printf("yes ");
         }
         else
-            printf("yes ");
+            printf("no ");
         if(f==1)
         {
-            printf("no ");
+            printf("yes ");
         }
         else
-            printf("yes ");
+            printf("no ");
     }
 
     return 0;
