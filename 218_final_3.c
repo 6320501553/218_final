@@ -112,24 +112,34 @@ int main()
                 break;
             }
         }
-        if(d==1)
+        printf("\n");
+        if(n>0)
         {
-            printf("yes ");
+            if(d==1)
+            {
+                printf("no ");
+            }
+            else
+                printf("yes ");
         }
-        else
-            printf("no ");
-        if(e==1)
+        if(m>0)
         {
-            printf("yes ");
+            if(e==1)
+            {
+                printf("no ");
+            }
+            else
+                printf("yse ");
         }
-        else
-            printf("no ");
-        if(f==1)
+        if(p>0)
         {
-            printf("yes ");
+            if(f==1)
+            {
+                printf("no ");
+            }
+            else
+                printf("yes");
         }
-        else
-            printf("no ");
     }
 
     return 0;
